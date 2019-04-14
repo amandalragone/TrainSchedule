@@ -15,7 +15,12 @@ $(document).ready(function(){
     var destination;
     var firstTrain;
     var frequency;
+    var nextArrival;
+    var minutesAway;
+    var totalTimePassed;
+    var timePassed;
     var row = 0;
+    
 
     $("button").on("click", function(){
 
@@ -45,9 +50,15 @@ $(document).ready(function(){
 
         trainName = snapshot.val().trainName;
         destination = snapshot.val().destination;
-        firstTrain = snapshot.val().firstTrain;
-        frequency = snapshot.val().frequency;
         row = row + 1;
+        
+        firstTrain = moment((snapshot.val().firstTrain), "HH:mm");
+        frequency = snapshot.val().frequency;
+
+        totalTimePassed = moment().diff(moment(firstTrain), "minutes");
+        timePassed = totalTimePassed % frequency;
+        minutesAway = frequency - timePassed;
+        nextArrival = moment().add(minutesAway, "minutes").format("HH:mm A");
 
         var newTrainAdded = `
             <tr>
@@ -55,8 +66,8 @@ $(document).ready(function(){
                 <td>${trainName}</td>
                 <td>${destination}</td>
                 <td>${frequency}</td>
-                <td>Nex Train</td>
-                <td>Minutes Away</td>
+                <td>${nextArrival}</td>
+                <td>${minutesAway}</td>
             </tr>
             `
 
