@@ -16,6 +16,52 @@
     </head>
     <body>
 
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Fluid jumbotron</h1>
+            </div>
+        </div>
+            
+        <div class="container">
+            <table class="table table-striped">
+                <h2>Current Train Schedule</h2>
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency (min)</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            
+            <form>
+                <h2>Add Train</h2>
+                <div class="form-group">
+                    <label for="train_name">Train Name</label>
+                    <input type="text" class="form-control" id="train_name" placeholder="Orient Express">
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input type="text" class="form-control" id="destination" placeholder="London">
+                </div>
+                <div class="form-group">
+                    <label for="first_train">First Train Time (HH:mm - military time)</label>
+                    <input type="text" class="form-control" id="first_train" placeholder="09:10 AM">
+                </div>
+                <div class="form-group">
+                    <label for="frequency">Frequency</label>
+                    <input type="text" class="form-control" id="frequency" placeholder="60">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            
+        </div>
+
         <!-- Firebase Script Tag -->
         <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
         
