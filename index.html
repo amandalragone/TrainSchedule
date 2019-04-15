@@ -17,30 +17,36 @@
     <body>
 
         <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-4">Fluid jumbotron</h1>
+            <div class="container text-center">
+                <h1 class="display-4">Train Schedule</h1>
             </div>
         </div>
             
         <div class="container">
-            <table class="table table-striped">
-                <h2>Current Train Schedule</h2>
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Train Name</th>
-                        <th scope="col">Destination</th>
-                        <th scope="col">Frequency (min)</th>
-                        <th scope="col">Next Arrival</th>
-                        <th scope="col">Minutes Away</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+
+                <h2 class="text-center">Current Train Schedule</h2>
+        
+                <table class="table table-striped text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Train Name</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Frequency (min)</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+        
+
+            </br>
+
+            <h2 class="text-center">Add Train</h2>
             
             <form>
-                <h2>Add Train</h2>
                 <div class="form-group">
                     <label for="train_name">Train Name</label>
                     <input type="text" class="form-control" id="train_name" placeholder="Orient Express">
