@@ -13,6 +13,7 @@ $(document).ready(function(){
     var database = firebase.database();
     var trainName;
     var destination;
+    var now = moment();
     var firstTrain;
     var frequency;
     var nextArrival;
@@ -52,13 +53,20 @@ $(document).ready(function(){
         destination = snapshot.val().destination;
         row = row + 1;
         
-        firstTrain = moment((snapshot.val().firstTrain), "HH:mm");
+        firstTrain = moment((snapshot.val().firstTrain), "hh:mm A");
         frequency = snapshot.val().frequency;
 
-        totalTimePassed = moment().diff(moment(firstTrain), "minutes");
-        timePassed = totalTimePassed % frequency;
-        minutesAway = frequency - timePassed;
-        nextArrival = moment().add(minutesAway, "minutes").format("HH:mm A");
+        if (now < firstTrain) {
+
+            minutesAway = moment(firstTrain).diff(moment(), "minutes");
+            nextArrival = moment(firstTrain, "minutes").format("hh:mm A");
+
+        } else if (firstTrain <= now) {
+            totalTimePassed = moment().diff(moment(firstTrain), "minutes");
+            timePassed = totalTimePassed % frequency;
+            minutesAway = frequency - timePassed;
+            nextArrival = moment().add(minutesAway, "minutes").format("hh:mm A");
+        }
 
         var newTrainAdded = `
             <tr>

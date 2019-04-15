@@ -1,0 +1,29 @@
+body {
+    line-height: 150%;
+}
+
+table, form {
+    border: 2px solid #809fff;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: -5px;
+    background-color: #809fff;
+}
+
+th, label {
+    font-weight: bold;
+}
+
+input:focus {
+    border: 2px solid #809fff;
+}
