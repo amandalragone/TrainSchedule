@@ -25,7 +25,7 @@ $(document).ready(function(){
 
     $("button").on("click", function(){
 
-        event.preventDefault();
+        event.preventDefault(event);
 
         trainName = $("#train_name").val();
         destination = $("#destination").val();
